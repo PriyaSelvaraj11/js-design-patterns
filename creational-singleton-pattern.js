@@ -1,10 +1,3 @@
-/**
- * Singleton Pattern Implementation in JavaScript
- * 
- * This class ensures that only a single instance of ConfigureVals is created.
- * If an instance already exists, it returns the same instance instead of creating a new one.
- */
-
 class ConfigureVals {
     constructor(xpoint = 0, ypoint = 0, shape = null) {
         // If an instance already exists, return that instance instead of creating a new one
@@ -12,7 +5,6 @@ class ConfigureVals {
             return ConfigureVals.instance;
         }
 
-        // Set the instance properties
         this.xpoint = xpoint;
         this.ypoint = ypoint;
         this.shape = shape;
@@ -22,7 +14,6 @@ class ConfigureVals {
 
     // Static method to create or return the existing instance
     static getConfiguration({ xpoint = 0, ypoint = 0, shape = null }) {
-        // Check if an instance already exists; if not, create one
         if (!ConfigureVals.instance) {
             ConfigureVals.instance = new ConfigureVals(xpoint, ypoint, shape);
         }
